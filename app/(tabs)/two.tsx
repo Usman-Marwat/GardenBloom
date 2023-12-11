@@ -1,10 +1,17 @@
+import { useState } from 'react';
 import { StyleSheet } from 'react-native';
+import { FlatList } from 'react-native-gesture-handler';
+import {
+	Button,
+	Card,
+	Dialog,
+	IconButton,
+	Portal,
+	Text,
+} from 'react-native-paper';
 
 import { View } from '../../components/Themed';
-import { Avatar, Card, IconButton, List } from 'react-native-paper';
-import { useState } from 'react';
 import gardeners from '../../data/gardeners';
-import { FlatList } from 'react-native-gesture-handler';
 import { ph } from '../../constants/Dimensions';
 import { Image } from 'expo-image';
 
@@ -28,6 +35,10 @@ export default function TabTwoScreen() {
 }
 
 const User = ({ user }: { user: (typeof gardeners)[0] }) => {
+	const [visible, setVisible] = useState(false);
+	const showDialog = () => setVisible(true);
+	const hideDialog = () => setVisible(false);
+
 	return (
 		<>
 			<Card.Title
@@ -38,9 +49,67 @@ const User = ({ user }: { user: (typeof gardeners)[0] }) => {
 					<Image source={{ uri: user.image }} style={styles.userImage} />
 				)}
 				right={(props) => (
-					<IconButton {...props} icon="chevron-down" onPress={() => {}} />
+					<IconButton
+						onPressIn={showDialog}
+						{...props}
+						icon="chevron-down"
+						onPress={() => {}}
+					/>
 				)}
 			/>
+
+			<Portal>
+				<Dialog
+					visible={visible}
+					onDismiss={hideDialog}
+					style={{ backgroundColor: '#F8F8F8', gap: 20 }}
+				>
+					<View
+						style={[
+							styles.dialogBox,
+							{
+								alignItems: 'center',
+								borderBottomWidth: 1,
+								borderColor: 'lightgrey',
+							},
+						]}
+					>
+						<Dialog.Title>{user.name}</Dialog.Title>
+						<Text variant="bodyLarge">{`(${user.hourlyRate} PKR)`}</Text>
+					</View>
+
+					<Dialog.Content style={{ gap: 15 }}>
+						<View style={styles.dialogBox}>
+							<Text variant="bodyMedium" style={styles.dialogTitle}>
+								Contact:
+							</Text>
+							<Text variant="bodyMedium">{`${user.contact}`}</Text>
+						</View>
+
+						<View style={styles.dialogBox}>
+							<Text variant="bodyMedium" style={styles.dialogTitle}>
+								Address:
+							</Text>
+							<Text
+								style={{ flexShrink: 1 }}
+								variant="bodyMedium"
+							>{`${user.address}`}</Text>
+						</View>
+
+						<View style={styles.dialogBox}>
+							<Text variant="bodyMedium" style={styles.dialogTitle}>
+								Rating:
+							</Text>
+							<Text variant="bodyMedium">{`   ${user.rating}/5`}</Text>
+						</View>
+					</Dialog.Content>
+					<Dialog.Actions>
+						<Button buttonColor="green" textColor="white" onPress={hideDialog}>
+							Done
+						</Button>
+					</Dialog.Actions>
+				</Dialog>
+			</Portal>
 		</>
 	);
 };
@@ -48,6 +117,16 @@ const User = ({ user }: { user: (typeof gardeners)[0] }) => {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
+	},
+	dialogBox: {
+		flexDirection: 'row',
+		alignItems: 'flex-start',
+		gap: 10,
+		backgroundColor: '#F8F8F8',
+	},
+	dialogTitle: {
+		fontSize: 15,
+		fontWeight: 'bold',
 	},
 	title: {
 		fontSize: 20,

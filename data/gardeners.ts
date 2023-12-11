@@ -5,7 +5,7 @@ export default [
 		rating: 4.2,
 		image:
 			'https://images.unsplash.com/photo-1628272107134-c66c4b580952?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZmFybWVycyUyMHBha2lzdGFufGVufDB8fDB8fHww',
-		contact: '+1 (555) 123-4567',
+		contact: '0336-6327782',
 		address: '123 Main St, Cityville, State 12345',
 	},
 	{
@@ -14,7 +14,7 @@ export default [
 		rating: 4.8,
 		image:
 			'https://images.unsplash.com/photo-1626226769718-7f619265d36b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fGZhcm1lcnMlMjBpbmRpYXxlbnwwfHwwfHx8MA%3D%3D',
-		contact: '+1 (555) 987-6543',
+		contact: '0317-1212992',
 		address: '456 Oak St, Townsville, State 67890',
 	},
 	{
@@ -23,7 +23,7 @@ export default [
 		rating: 3.5,
 		image:
 			'https://plus.unsplash.com/premium_photo-1682092099881-090cfae8f113?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fGZhcm1lcnMlMjBpbmRpYXxlbnwwfHwwfHx8MA%3D%3D',
-		contact: '+1 (555) 234-5678',
+		contact: '0318-3618372',
 		address: '789 Pine St, Villagetown, State 34567',
 	},
 	{
@@ -32,7 +32,7 @@ export default [
 		rating: 4.0,
 		image:
 			'https://images.unsplash.com/photo-1625642550984-8baa37fab5f7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fGZhcm1lcnMlMjBpbmRpYXxlbnwwfHwwfHx8MA%3D%3D',
-		contact: '+1 (555) 876-5432',
+		contact: '0307-5577003',
 		address: '101 Elm St, Hamletville, State 89012',
 	},
 	{
@@ -41,7 +41,7 @@ export default [
 		rating: 4.5,
 		image:
 			'https://plus.unsplash.com/premium_photo-1682092016074-b136e1acb26e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmFybWVycyUyMGluZGlhfGVufDB8fDB8fHww',
-		contact: '+1 (555) 345-6789',
+		contact: '0303-2277338',
 		address: '202 Birch St, Suburbia, State 23456',
 	},
 	{
@@ -50,7 +50,7 @@ export default [
 		rating: 4.9,
 		image:
 			'https://plus.unsplash.com/premium_photo-1682092836935-d0aba6cb3ed9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGZhcm1lcnMlMjBpbmRpYXxlbnwwfHwwfHx8MA%3D%3D',
-		contact: '+1 (555) 654-3210',
+		contact: '0321-9967382',
 		address: '303 Cedar St, Countryside, State 78901',
 	},
 	{
@@ -59,7 +59,7 @@ export default [
 		rating: 3.8,
 		image:
 			'https://plus.unsplash.com/premium_photo-1682092093534-c16eb3ea13c8?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGZhcm1lcnMlMjBpbmRpYXxlbnwwfHwwfHx8MA%3D%3D',
-		contact: '+1 (555) 876-5432',
+		contact: '0333-8738392',
 		address: '404 Maple St, Outskirts, State 12345',
 	},
 	{
@@ -68,7 +68,7 @@ export default [
 		rating: 4.7,
 		image:
 			'https://images.unsplash.com/photo-1527580477540-6ef8bc65b8a3?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGZhcm1lcnMlMjBpbmRpYXxlbnwwfHwwfHx8MA%3D%3D',
-		contact: '+1 (555) 987-6543',
+		contact: '0332-7478283',
 		address: '505 Walnut St, Riverside, State 67890',
 	},
 	{
@@ -77,7 +77,7 @@ export default [
 		rating: 4.1,
 		image:
 			'https://images.unsplash.com/photo-1626201174770-acdbbf1c99d0?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGZhcm1lcnMlMjBpbmRpYXxlbnwwfHwwfHx8MA%3D%3D',
-		contact: '+1 (555) 234-5678',
+		contact: '0311-6677330',
 		address: '606 Fir St, Mountainside, State 34567',
 	},
 	{
@@ -86,7 +86,7 @@ export default [
 		rating: 4.6,
 		image:
 			'https://images.unsplash.com/photo-1615472910606-9d4f7291944f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGZhcm1lcnMlMjBpbmRpYXxlbnwwfHwwfHx8MA%3D%3D',
-		contact: '+1 (555) 876-5432',
+		contact: '0345-9240017',
 		address: '707 Pine St, Lakeside, State 89012',
 	},
 ];

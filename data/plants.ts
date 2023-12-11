@@ -154,13 +154,6 @@ export default [
 			"Snapdragons are tall, spiky flowers with a unique shape resembling a dragon's mouth. They are popular in floral arrangements and cottage gardens.",
 	},
 	{
-		name: 'African Violet',
-		species: 'Saintpaulia',
-		image: 'https://source.unsplash.com/featured/?african-violet',
-		description:
-			'African Violets are small, compact plants with fuzzy leaves and colorful, delicate flowers. They are commonly kept as houseplants and require gentle care.',
-	},
-	{
 		name: 'Daffodil',
 		species: 'Narcissus',
 		image: 'https://source.unsplash.com/featured/?daffodil',
