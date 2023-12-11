@@ -2,12 +2,14 @@ import React from 'react';
 import { Image, StyleSheet } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
-import { Button, TextInput } from 'react-native-paper';
+import { Button, Checkbox, Divider, TextInput } from 'react-native-paper';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import useAuth from '../auth/useAuth';
 import { pf, ph, pw } from '../constants/Dimensions';
+import { Text, View } from '../components/Themed';
 
 export default function Register() {
+	const [checked, setChecked] = React.useState(true);
 	const { setUser } = useAuth();
 
 	return (
@@ -66,6 +68,19 @@ export default function Register() {
 					autoCapitalize="none"
 					keyboardType="visible-password"
 				/>
+				<View style={styles.checkBox}>
+					<Checkbox
+						color="green"
+						status={checked ? 'checked' : 'unchecked'}
+						onPress={() => setChecked(!checked)}
+					/>
+
+					<Divider
+						horizontalInset
+						style={{ borderWidth: 0.3, height: '100%' }}
+					/>
+					<Text>I am gardener</Text>
+				</View>
 				<Button
 					icon="account"
 					mode="contained"
@@ -91,6 +106,12 @@ export default function Register() {
 const styles = StyleSheet.create({
 	container: {
 		padding: pw(5),
+	},
+	checkBox: {
+		flexDirection: 'row',
+		alignItems: 'center',
+		marginTop: 20,
+		borderColor: 'grey',
 	},
 	errorText: {
 		color: 'red',
