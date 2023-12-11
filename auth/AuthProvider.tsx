@@ -6,15 +6,17 @@ import {
 	SetStateAction,
 } from 'react';
 
+type AuthUser = { type: 'login' | 'register' | 'main' };
+
 export interface IAuthContext {
-	user: { name?: string };
-	setUser: Dispatch<SetStateAction<{}>>;
+	user: AuthUser;
+	setUser: Dispatch<SetStateAction<AuthUser>>;
 }
 
 const AuthContext = createContext<IAuthContext>({} as IAuthContext);
 
 export const AuthProvider = ({ children }: PropsWithChildren) => {
-	const [user, setUser] = useState({});
+	const [user, setUser] = useState<AuthUser>({ type: 'login' });
 
 	return (
 		<AuthContext.Provider value={{ user, setUser }}>

@@ -9,7 +9,7 @@ export default () => {
 	};
 
 	const logOut = () => {
-		setUser({});
+		setUser({ type: 'login' });
 	};
 
 	return {

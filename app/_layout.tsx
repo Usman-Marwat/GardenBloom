@@ -12,6 +12,7 @@ import { PaperProvider } from 'react-native-paper';
 import Login from './login';
 import useAuth from '../auth/useAuth';
 import { AuthProvider } from '../auth/AuthProvider';
+import Register from './register';
 
 export {
 	// Catch any errors thrown by the Layout component.
@@ -60,7 +61,8 @@ function RootLayoutNav() {
 	const colorScheme = useColorScheme();
 	const { user } = useAuth();
 
-	if (!user?.name) return <Login />;
+	if (user?.type === 'login') return <Login />;
+	if (user?.type === 'register') return <Register />;
 
 	return (
 		<ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>

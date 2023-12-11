@@ -1,24 +1,14 @@
 import React from 'react';
-import { StyleSheet, Image, View } from 'react-native';
+import { Image, StyleSheet } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
-import { Text } from '../components/Themed';
-import { pf, ph, pw } from '../constants/Dimensions';
-import useAuth from '../auth/useAuth';
 import { Button, TextInput } from 'react-native-paper';
-import Animated, { FadeIn, FadeInDown, FadeOut } from 'react-native-reanimated';
+import Animated, { FadeInDown } from 'react-native-reanimated';
+import useAuth from '../auth/useAuth';
+import { pf, ph, pw } from '../constants/Dimensions';
 
-export default function Login() {
-	const [text, setText] = React.useState('');
-	const [password, setPassword] = React.useState('');
-	const [error, setError] = React.useState('');
+export default function Register() {
 	const { setUser } = useAuth();
-
-	const handleLogin = () => {
-		if (!text || !password) return setError('Please enter email and password');
-
-		setUser({ type: 'main' });
-	};
 
 	return (
 		<Animated.View style={{ flex: 1 }} entering={FadeInDown.duration(1000)}>
@@ -30,23 +20,9 @@ export default function Login() {
 					style={styles.logo}
 					source={require('../assets/images/icon.png')}
 				/>
-				{error && (
-					<Animated.Text
-						entering={FadeIn.duration(300)}
-						exiting={FadeOut.duration(500)}
-						style={styles.errorText}
-					>
-						{error}
-					</Animated.Text>
-				)}
 				<TextInput
 					mode="flat"
-					label="Email"
-					value={text}
-					onChangeText={(text) => {
-						if (error) setError('');
-						setText(text);
-					}}
+					label="User Name"
 					style={{ marginTop: 30 }}
 					activeUnderlineColor="#303030"
 					contentStyle={{ backgroundColor: '#F8F8F8' }}
@@ -55,13 +31,35 @@ export default function Login() {
 				/>
 				<TextInput
 					mode="flat"
+					label="Phone"
+					style={{ marginTop: 20 }}
+					activeUnderlineColor="#303030"
+					contentStyle={{ backgroundColor: '#F8F8F8' }}
+					autoCapitalize="none"
+					keyboardType="email-address"
+				/>
+				<TextInput
+					mode="flat"
+					label="Address"
+					style={{ marginTop: 20 }}
+					activeUnderlineColor="#303030"
+					contentStyle={{ backgroundColor: '#F8F8F8' }}
+					autoCapitalize="none"
+					keyboardType="email-address"
+				/>
+				<TextInput
+					mode="flat"
+					label="Email"
+					style={{ marginTop: 20 }}
+					activeUnderlineColor="#303030"
+					contentStyle={{ backgroundColor: '#F8F8F8' }}
+					autoCapitalize="none"
+					keyboardType="email-address"
+				/>
+				<TextInput
+					mode="flat"
 					label="Password"
-					value={password}
 					secureTextEntry
-					onChangeText={(text) => {
-						if (error) setError('');
-						setPassword(text);
-					}}
 					style={{ marginTop: 20 }}
 					activeUnderlineColor="#303030"
 					contentStyle={{ backgroundColor: '#F8F8F8' }}
@@ -69,21 +67,21 @@ export default function Login() {
 					keyboardType="visible-password"
 				/>
 				<Button
-					icon="login"
+					icon="account"
 					mode="contained"
-					onPress={handleLogin}
+					onPress={() => setUser({ type: 'login' })}
 					buttonColor="green"
 					style={{ marginTop: 30 }}
 				>
-					LOG IN
+					Register
 				</Button>
 				<Button
 					mode="text"
 					textColor="grey"
-					onPress={() => setUser({ type: 'register' })}
+					onPress={() => setUser({ type: 'login' })}
 					style={{ marginTop: 10 }}
 				>
-					Do not have an account?
+					Already have an account?
 				</Button>
 			</KeyboardAwareScrollView>
 		</Animated.View>
